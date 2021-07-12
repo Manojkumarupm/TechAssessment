@@ -218,6 +218,39 @@
       <DependentUpon>AssetModel.edmx</DependentUpon>
       <LastGenOutput>AssetModel.cs</LastGenOutput>
     </Content>
+    <Content Include="ClientApp\.editorconfig" />
+    <Content Include="ClientApp\.gitattributes" />
+    <Content Include="ClientApp\.gitignore" />
+    <Content Include="ClientApp\angular.json" />
+    <Content Include="ClientApp\browserslist" />
+    <Content Include="ClientApp\e2e\protractor.conf.js" />
+    <Content Include="ClientApp\e2e\tsconfig.json" />
+    <Content Include="ClientApp\karma.conf.js" />
+    <Content Include="ClientApp\out-tsc\e2e\app.e2e-spec.js" />
+    <Content Include="ClientApp\out-tsc\e2e\app.e2e-spec.js.map" />
+    <Content Include="ClientApp\out-tsc\e2e\app.po.js" />
+    <Content Include="ClientApp\out-tsc\e2e\app.po.js.map" />
+    <Content Include="ClientApp\package-lock.json" />
+    <Content Include="ClientApp\package.json" />
+    <Content Include="ClientApp\README.md" />
+    <Content Include="ClientApp\src\app\app.component.html" />
+    <Content Include="ClientApp\src\app\app.component.scss" />
+    <Content Include="ClientApp\src\app\Assets\asset-detail\asset-detail.component.html" />
+    <Content Include="ClientApp\src\app\Assets\asset-detail\asset-detail.component.scss" />
+    <Content Include="ClientApp\src\app\Assets\asset-edit\asset-edit.component.html" />
+    <Content Include="ClientApp\src\app\Assets\asset-edit\asset-edit.component.scss" />
+    <Content Include="ClientApp\src\app\Assets\asset-list\asset-list.component.html" />
+    <Content Include="ClientApp\src\app\Assets\asset-list\asset-list.component.scss" />
+    <Content Include="ClientApp\src\app\welcome\welcome.component.html" />
+    <Content Include="ClientApp\src\app\welcome\welcome.component.scss" />
+    <Content Include="ClientApp\src\assets\.gitkeep" />
+    <Content Include="ClientApp\src\favicon.ico" />
+    <Content Include="ClientApp\src\index.html" />
+    <Content Include="ClientApp\src\styles.scss" />
+    <Content Include="ClientApp\tsconfig.app.json" />
+    <Content Include="ClientApp\tsconfig.json" />
+    <Content Include="ClientApp\tsconfig.spec.json" />
+    <Content Include="ClientApp\tslint.json" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -336,6 +369,41 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\e2e\src\app.e2e-spec.ts" />
+    <TypeScriptCompile Include="ClientApp\e2e\src\app.po.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\app.component.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\app.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\app.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\Assets\asset-detail\asset-detail.component.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\Assets\asset-detail\asset-detail.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\Assets\asset-edit\asset-edit.component.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\Assets\asset-edit\asset-edit.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\Assets\asset-edit\asset-edit.guard.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\Assets\asset-edit\asset-edit.guard.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\Assets\asset-list\asset-list.component.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\Assets\asset-list\asset-list.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\Assets\asset-resolver.service.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\Assets\asset-resolver.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\Assets\AssetInformation.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\Assets\asset\asset.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\data\country-data-store.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\data\country-data-store.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\data\country.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\data\mime.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\data\mimes.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\service\api.service.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\service\api.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\service\file-upload.service.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\service\file-upload.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\service\pagination.service.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\service\pagination.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\welcome\welcome.component.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\welcome\welcome.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\environments\environment.prod.ts" />
+    <TypeScriptCompile Include="ClientApp\src\environments\environment.ts" />
+    <TypeScriptCompile Include="ClientApp\src\main.ts" />
+    <TypeScriptCompile Include="ClientApp\src\polyfills.ts" />
+    <TypeScriptCompile Include="ClientApp\src\test.ts" />
     <TypeScriptCompile Include="Scripts\index.d.ts" />
   </ItemGroup>
   <PropertyGroup>
