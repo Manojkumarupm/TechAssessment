@@ -1,0 +1,72 @@
+<div class="row">
+  <div class="col-12 col-md-12">
+    <div class="card">
+      <div class="card-header">
+        Assets {{1 * (this.config.currentPage > 1 ? (this.config.itemsPerPage * (this.config.currentPage-1)) : 0) + 1 }} -{{ this.config.itemsPerPage * this.config.currentPage }} (Total:{{ this.collection.count }})
+      </div>
+      <div class="card-body position-relative">
+
+        <div class="table-responsive cnstr-record companie-tbl">
+       <table class="table table-bordered heading-hvr">
+            <thead>
+              <tr>
+                <th>FileName</th>
+                <th>
+                  MimeType
+                </th>
+                <th [ngClass]="sortOrder =='Country'? 'active':''" style="cursor: pointer;" (click)="setOrder('Country')"
+                   >
+                  Country
+                </th>
+               
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of collection.data | paginate: config">
+              
+                <td> <a [routerLink]="['/Assets',item.AssetId]"> {{ item.FileName }} </a> </td>
+                <td>{{ item.MimeType }}</td>
+                <td>{{ item.Country }}</td>
+                
+              </tr>
+            </tbody>
+          </table>
+        <!-- <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Item</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of collection.data | paginate: config">
+                <th scope="row">{{item.id}}</th>
+                <td>{{item.value}}</td>
+              </tr>
+            </tbody>
+          </table>-->
+          <pagination-controls  [maxSize]="maxSize"
+          [directionLinks]="directionLinks"
+          [autoHide]="autoHide"
+          [responsive]="responsive"
+          [previousLabel]="labels.previousLabel"
+          [nextLabel]="labels.nextLabel"
+          [screenReaderPaginationLabel]="labels.screenReaderPaginationLabel"
+          [screenReaderPageLabel]="labels.screenReaderPageLabel"
+          [screenReaderCurrentLabel]="labels.screenReaderCurrentLabel" (pageChange)="pageChanged($event)"
+          (pageBoundsCorrection)="pageChanged($event)"></pagination-controls>
+          <div style="text-align: center;">
+            Page {{ this.config.currentPage }} of Total page {{ this.collection.count }}
+          </div>
+          <div>
+          Items per Page:
+          <select (change)="handlePageSizeChange($event)">
+            <option *ngFor="let size of pageSizes">
+              {{ size }}
+            </option>
+          </select>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

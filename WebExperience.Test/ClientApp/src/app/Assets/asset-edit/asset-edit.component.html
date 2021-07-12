@@ -1,0 +1,154 @@
+<div class="card">
+  <div class="card-header">
+    {{ pageTitle }}
+  </div>
+
+  <div class="card-body">
+    <form novalidate (ngSubmit)="saveAsset()" [formGroup]="AssetForm">
+      
+      <!-- FileName Start-->
+      <div class="form-group row mb-3">
+        <label class="col-md-2 col-form-label" for="FileName">FileName</label>
+        <div class="col-md-8">
+          <input
+            class="form-control"
+            type="text"
+            id="FileName"
+            placeholder="FileName"
+            formControlName="FileName"
+            [ngClass]="{
+              'is-invalid':
+                (AssetForm.get('FileName').touched ||
+                  AssetForm.get('FileName').dirty) &&
+                !AssetForm.get('FileName').valid
+            }"
+          />
+          <span class="invalid-feedback">
+            <span *ngIf="AssetForm.get('FileName').errors?.required"> FileName should not be empty </span>
+          </span>
+          
+        </div>
+      </div>
+      <!-- FileName End-->
+      <div class="form-group row mb-3">
+        <label class="col-md-2 col-form-label"
+               for="MimeType">MimeType</label>
+
+        <div class="col-md-8">
+         <!-- <input class="form-control" type="text" 
+                    id="MimeType"
+                    placeholder="MimeType"
+                    formControlName="MimeType"
+                    [ngClass]="{
+                      'is-invalid':
+                        (AssetForm.get('MimeType').touched ||
+                          AssetForm.get('MimeType').dirty) &&
+                        !AssetForm.get('MimeType').valid
+                    }"
+                    />
+                  -->
+                  <select class="form-control" formControlName="MimeType" name="MimeType" id="MimeType" (change)="changeMimeType($event)">
+                    <option value="" disabled selected>Select MimeType</option>
+                    <option *ngFor="let mime of mimes" [ngValue]="mime">{{mime}}</option>
+               </select>
+          <span class="invalid-feedback">
+          <span *ngIf="AssetForm.get('MimeType').errors?.required">MimeType should not be empty</span>>
+            
+          </span>
+        </div>
+      </div>
+      <!-- <div class="form-group row mb-3">
+        <label class="col-md-2 col-form-label"
+               for="Created_On">Created_On</label>
+
+        <div class="col-md-8">
+          <input class="form-control" type="text" 
+                    id="Created_On"
+                    placeholder="Created_On"
+                    formControlName="Created_On"
+                    [ngClass]="{'is-invalid': (AssetForm.get('Created_On').touched || AssetForm.get('Created_On').dirty) && !AssetForm.get('Created_On').valid }"/>
+          <span class="invalid-feedback">
+            <span *ngIf="AssetForm.get('Created_On').errors?.required"> Created_On should not be empty </span>
+          </span>
+        </div>
+      </div>-->
+      <div class="form-group row mb-3">
+        <label class="col-md-2 col-form-label"
+               for="Email">Email</label>
+
+        <div class="col-md-8">
+          <input class="form-control" type="text" 
+                    id="Email"
+                    placeholder="Email"
+                    formControlName="Email"
+                    [ngClass]="{'is-invalid': (AssetForm.get('Email').touched || AssetForm.get('Email').dirty) && !AssetForm.get('Email').valid }"
+                    />
+          <span class="invalid-feedback">
+            <span *ngIf="AssetForm.get('Email').errors?.required"> Created_By should not be empty </span>
+            <span *ngIf="AssetForm.get('Email').errors?.email"> Should be valid email format </span>
+          </span>
+        </div>
+      </div>
+      <div class="form-group row mb-3">
+        <label class="col-md-2 col-form-label"
+               for="Country">Country</label>
+
+        <div class="col-md-8">
+        
+         <input class="form-control" type="text" 
+                    id="Country"
+                    placeholder="Country"
+                    formControlName="Country"
+                    [ngClass]="{'is-invalid': (AssetForm.get('Country').touched || AssetForm.get('Country').dirty) && !AssetForm.get('Country').valid }"/>
+          <span class="invalid-feedback">
+            <span *ngIf="AssetForm.get('Country').errors?.required"> Country should not be empty</span>
+          </span>
+        </div>
+      </div>
+      <div class="form-group row mb-3">
+        <label class="col-md-2 col-form-label"
+               for="Description">Description</label>
+
+        <div class="col-md-8">
+          <input class="form-control" type="text" 
+                    id="Description"
+                    placeholder="Description"
+                    formControlName="Description"
+                    [ngClass]="{'is-invalid': (AssetForm.get('Description').touched || AssetForm.get('Description').dirty) && !AssetForm.get('Description').valid }"/>
+          <span class="invalid-feedback">
+            <span *ngIf="AssetForm.get('Description').errors?.required"> Description should not be empty</span>
+          </span>
+        </div>
+      </div>
+      
+
+      <div class="form-group row mb-3">
+        <div class="offset-md-2 col-md-4">
+          <button
+            class="btn btn-primary mr-3"
+            style="width: 80px"
+            type="submit"
+            [title]="
+              AssetForm.valid
+                ? 'Save your entered data'
+                : 'Disabled until the form data is valid'
+            "
+            [disabled]="!AssetForm.valid"
+          >
+            Save
+          </button>
+          <button
+            class="btn btn-outline-secondary mr-3"
+            style="width: 80px"
+            type="button"
+            title="Cancel your edits"
+            [routerLink]="['/Assets']"
+          >
+            Cancel
+          </button>
+          
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
